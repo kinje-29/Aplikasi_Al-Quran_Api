@@ -10,3 +10,10 @@
 #### Link Api
 * https://github.com/bachors/Al-Quran-ID-API/tree/master
 * https://api.npoint.io/99c279bb173a6e28359c/data
+
+
+#### Tampilan Aplikasi
+
+![1.png](img/1.png)
+
+![2.png](img/2.png)
