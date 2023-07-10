@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/repository.dart';
-// import 'home.dart';
 import 'detail.dart';
 import 'model.dart';
 
@@ -14,10 +13,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // theme: ThemeData.dark().copyWith(scaffoldBackgroundColor: darkBlue)),
       debugShowCheckedModeBanner: false,
       title: 'Ujian Akhir Semester',
-      // theme: ThemeData.dark().copyWith(scaffoldBackgroundColor: darkBlue),
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
@@ -55,12 +52,12 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-            style: TextStyle(
-                fontSize: 20, color: const Color.fromARGB(255, 0, 0, 0)),
+            style: const TextStyle(
+                fontSize: 20, color: Color.fromARGB(255, 0, 0, 0)),
             widget.title),
       ),
       body: ListView.separated(
-        padding: EdgeInsets.all(50),
+        padding: const EdgeInsets.all(50),
         itemBuilder: (context, index) {
           return Container(
             decoration: BoxDecoration(
@@ -71,7 +68,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   color: Colors.grey.withOpacity(0.3),
                   spreadRadius: 2,
                   blurRadius: 5,
-                  offset: Offset(0, 3),
+                  offset: const Offset(0, 3),
                 )
               ],
             ),
@@ -80,21 +77,21 @@ class _MyHomePageState extends State<MyHomePage> {
               children: [
                 Container(
                   child: ListTile(
-                    leading: Icon(
+                    leading: const Icon(
                       Icons.chrome_reader_mode_rounded,
                       color: const Color.fromARGB(255, 243, 243, 243),
                       size: 50,
                     ),
                     title: Text(
                       LisBlog[index].nama,
-                      style: TextStyle(
+                      style: const TextStyle(
                           color: Colors.white,
                           fontSize: 18,
                           fontWeight: FontWeight.bold),
                     ),
                     subtitle: Text(
                       LisBlog[index].arti,
-                      style: TextStyle(color: Colors.white, fontSize: 12),
+                      style: const TextStyle(color: Colors.white, fontSize: 12),
                     ),
                     onTap: () {
                       Navigator.push(
@@ -106,19 +103,16 @@ class _MyHomePageState extends State<MyHomePage> {
                                     audio: LisBlog[index].audio,
                                     keterangan: LisBlog[index].keterangan,
                                     nama: LisBlog[index].nama,
-                                  ))
-                          // MaterialPageRoute(builder: (c) => const Detail(articelData: _posts[index][''])),
-                          );
+                                  )));
                     },
                   ),
                 )
               ],
-              // LisBlog[index].name
             ),
           );
         },
         separatorBuilder: (context, index) {
-          return Divider();
+          return const Divider();
         },
         itemCount: LisBlog.length,
       ),

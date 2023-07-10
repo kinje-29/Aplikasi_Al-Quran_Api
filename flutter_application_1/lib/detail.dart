@@ -8,7 +8,7 @@ class Detail extends StatelessWidget {
   final String? keterangan;
   final String? nama;
 
-  Detail({
+  const Detail({
     Key? key,
     this.arti,
     this.asma,
@@ -28,9 +28,14 @@ class Detail extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
+                    const Icon(
+                      Icons.mosque_outlined,
+                      size: 50,
+                    ),
                     Text(
-                      '$nama',
+                      '\t$nama',
                       style: const TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
@@ -51,7 +56,23 @@ class Detail extends StatelessWidget {
                 const SizedBox(height: 5),
                 const Divider(),
                 Text('asma: $asma'),
-                Text('Audio : $audio'),
+                RichText(
+                  text: TextSpan(
+                    children: [
+                      const WidgetSpan(
+                        child: Icon(
+                          Icons.mic_none_outlined,
+                          size: 20,
+                          // color: Colors.yellow,
+                        ),
+                      ),
+                      TextSpan(
+                        text: '$audio',
+                        style: const TextStyle(fontSize: 16),
+                      ),
+                    ],
+                  ),
+                )
               ],
             ),
           ),
